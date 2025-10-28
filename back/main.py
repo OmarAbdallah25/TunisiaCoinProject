@@ -16,9 +16,8 @@ app.add_middleware(
 )
 
 # Charger le modèle YOLOv8
-model = YOLO("best.pt")  # Assure-toi que best.pt est dans le dossier Bakend
-
-# Valeur de chaque pièce (en millimes)
+model = YOLO("best.pt") 
+# Valeur de chaque pièce 
 labels = {
     "50m": 50,
     "100m": 100,
@@ -59,3 +58,4 @@ async def detect(file: UploadFile = File(...)):
         })
 
     return {"sum": total, "detections": detections}
+
